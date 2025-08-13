@@ -76,6 +76,9 @@ via ACL --> PG
 
 ```
 
+<img width="3840" height="1523" alt="Redis_SequenceDiagram _ Mermaid Chart-2025-08-13-045648" src="https://github.com/user-attachments/assets/7ecb19d8-2d8c-449e-aaa9-9d57cf7d59ae" />
+
+
 # Mapping ตาราง → Bounded Context
 
 ## 1) Recurring Orchestrator (Core)
