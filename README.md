@@ -1,6 +1,6 @@
 # X_RecurringPayment
 
-# ภาพรวม Context Map (ระดับโดเมน)
+# ภาพรวม ขอบเขตโดเมน (Bounded Contexts)
 
 1. **Core Domain**
 
