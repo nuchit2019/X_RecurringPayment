@@ -134,11 +134,3 @@
 3. `billing-invoice-service` (Supporting)
 4. `pg-connector-service` (Supporting, ACL)
 5. `notification-service` (Generic; จะรวมกับระบบแจ้งเตือนเดิมก็ได้)
-
-**ภายหลังค่อยแยก/เชื่อม**
-
-* `policy-service` (ถ้ามีอยู่แล้ว ใช้เป็น Upstream)
-* `catalog-channel-service`
-* `iam-service`
-
- 
