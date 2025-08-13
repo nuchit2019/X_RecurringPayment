@@ -20,6 +20,60 @@
 
 ---
 
+```mermaid
+config:
+  layout: elk
+---
+flowchart TB
+ subgraph CORE["Core Domain"]
+        R["Recurring Orchestrator"]
+  end
+ subgraph SUP["Supporting Domains"]
+        P["Payer & Mandate
+(Consents, PaymentMethods)"]
+        B["Billing / Invoicing"]
+        Pol["Policy (Insurance)"]
+        Cat["Channel & Product Catalog"]
+        PG["Payment Gateway Connector
+(ACL/Anti-Corruption Layer)"]
+        N["Notification"]
+  end
+ subgraph GEN["Generic Domains"]
+        IAM["IAM / Admin
+(Employees, Roles, Menus)"]
+        REF["Reference / Utilities
+(RunningNumbers, TitleNames)"]
+  end
+    Pol -- Published Language
+(Customer/Supplier) --> R
+    P -- ConsentGranted, PaymentMethodRegistered
+(Events) --> R
+    Cat -- Allowed Recurring Types by Channel
+(Policy) --> R
+    R -- CreateInvoice (Command) --> B
+    B -- InvoiceCreated (Event) --> R
+    R -- AttemptCharge (Command)
+via ACL --> PG
+    PG -- PgCallbackReceived (Event) --> R
+    R -- PaymentSucceeded/Failed, RetryScheduled
+(Events) --> N
+    IAM -. AuthZ/Role .-> R
+    IAM -.-> P & B
+    REF -.-> B & R
+     R:::core
+     P:::support
+     B:::support
+     Pol:::support
+     Cat:::support
+     PG:::support
+     N:::support
+     IAM:::generic
+     REF:::generic
+    classDef core fill:#f2e8ff,stroke:#7a3db8,stroke-width:1.2px,color:#1b0b2e
+    classDef support fill:#e6f7ff,stroke:#1677ff,stroke-width:1.2px
+    classDef generic fill:#fafafa,stroke:#999,stroke-width:1.2px
+```
+
 # Mapping ตาราง → Bounded Context
 
 ## 1) Recurring Orchestrator (Core)
