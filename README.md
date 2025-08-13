@@ -21,7 +21,8 @@
 
 
 # Domain Overview
-<img width="3840" height="1523" alt="Redis_SequenceDiagram _ Mermaid Chart-2025-08-13-045648" src="https://github.com/user-attachments/assets/7ecb19d8-2d8c-449e-aaa9-9d57cf7d59ae" />
+<img width="1917" height="760" alt="image" src="https://github.com/user-attachments/assets/c55f5b70-e82f-4ee9-8505-f86e69a880a4" />
+
 
 
 # Mapping ตาราง → Bounded Context
