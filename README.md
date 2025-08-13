@@ -2,21 +2,23 @@
 
 # ภาพรวม ขอบเขตโดเมน (Bounded Contexts)
 
-1. **Core Domain**
+* **Core Domain**
 
-  - **Recurring Orchestrator** – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
-2. **Supporting Domains**
+  1. **Recurring Orchestrator** – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
+* **Supporting Domains**
   2\) **Payer & Mandate (Consent/Payment Method)** – เก็บผู้ชำระ/วิธีชำระ/การยินยอม (mandate)
   3\) **Billing / Invoicing** – ออกใบแจ้งหนี้/อ้างอิงยอดที่จะเรียกเก็บ
   4\) **Policy** (จากธุรกิจประกัน) – แหล่งความจริงของข้อมูลกรมธรรม์/เบี้ย/งวดชำระ
   5\) **Channel & Product Catalog** – ตั้งค่าช่องทางและสินค้าที่เปิดให้ recurring ได้/รูปแบบที่รองรับ
   6\) **Payment Gateway Connector** – ครอบ (Adapter/ACL) สำหรับเรียกเก็บจริงกับ PG และเก็บ transaction log
   7\) **Notification** – ส่งข้อความตาม template (SMS/LINE/Email) ตามเหตุการณ์
-3. **Generic Subdomains**
+* **Generic Subdomains**
   8\) **IAM/Admin** – สิทธิ์เมนู บทบาท พนักงาน
   9\) **Reference/Utility** – RunningNumbers, TitleNames (อ้างอิงทั่วไป)
 
 > หมายเหตุ “Mandate” = การให้สิทธิ์ตัดบัญชี/บัตรแบบต่อเนื่อง (เช่น Direct Debit/บัตรเครดิต) ซึ่งในระบบนี้ผูกกับ **Consent / PaymentMethodConsent**
+
+
 
 # Domain Overview
 <img width="3840" height="1523" alt="Redis_SequenceDiagram _ Mermaid Chart-2025-08-13-045648" src="https://github.com/user-attachments/assets/7ecb19d8-2d8c-449e-aaa9-9d57cf7d59ae" />
