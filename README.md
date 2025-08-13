@@ -1,5 +1,4 @@
 # X_RecurringPayment
-ได้เลย! ผมช่วยจับ “ขอบเขตโดเมน (Bounded Contexts)” ของระบบ Recurring Payment จากตาราง/ไดอะแกรมที่ให้มา และชี้ว่าใครเป็น Core / Supporting / Generic พร้อม mapping ตารางให้ครับ
 
 # ภาพรวม Context Map (ระดับโดเมน)
 
@@ -184,6 +183,5 @@
 * การเก็บข้อมูลบัตร: ต้องเป็น token/alias เท่านั้น และ encryption/rotation ตามมาตรฐาน PCI
 
 ---
-
-ถ้าต้องการ ผมทำ **แผนภาพ Context Map + Sequence (จาก Register → Charge → PG → Update Status → Notify)** ลงบนแคนวาสให้ดูต่อได้เลย บอกสไตล์ที่อยากได้ (Mermaid / ภาพสวยๆ) เดี๋ยวจัดให้ครับ!
+ 
 
