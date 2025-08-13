@@ -3,7 +3,7 @@
 # ภาพรวม ขอบเขตโดเมน (Bounded Contexts)
 
 * **Core Domain**
-  1. **Recurring Orchestrator** – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
+  1. Recurring Orchestrator – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
      
 * **Supporting Domains**
   2. **Payer & Mandate (Consent/Payment Method)** – เก็บผู้ชำระ/วิธีชำระ/การยินยอม (mandate)
