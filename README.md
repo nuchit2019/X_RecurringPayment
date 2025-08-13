@@ -4,7 +4,7 @@
 
 ## **Core Domain**
 1. Recurring Orchestrator – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
-     
+# 
 ## **Supporting Domains**
 2. **Payer & Mandate (Consent/Payment Method)** – เก็บผู้ชำระ/วิธีชำระ/การยินยอม (mandate)
 3. **Billing / Invoicing** – ออกใบแจ้งหนี้/อ้างอิงยอดที่จะเรียกเก็บ
@@ -12,21 +12,19 @@
 5. **Channel & Product Catalog** – ตั้งค่าช่องทางและสินค้าที่เปิดให้ recurring ได้/รูปแบบที่รองรับ
 6. **Payment Gateway Connector** – ครอบ (Adapter/ACL) สำหรับเรียกเก็บจริงกับ PG และเก็บ transaction log
 7. **Notification** – ส่งข้อความตาม template (SMS/LINE/Email) ตามเหตุการณ์
-  
+#
 ## **Generic Subdomains**
 8. **IAM/Admin** – สิทธิ์เมนู บทบาท พนักงาน
 9. **Reference/Utility** – RunningNumbers, TitleNames (อ้างอิงทั่วไป)
-
+#
 > หมายเหตุ “Mandate” = การให้สิทธิ์ตัดบัญชี/บัตรแบบต่อเนื่อง (เช่น Direct Debit/บัตรเครดิต) ซึ่งในระบบนี้ผูกกับ **Consent / PaymentMethodConsent**
 
-
-
-
+#
 
 # Domain Overview
 <img width="1917" height="760" alt="image" src="https://github.com/user-attachments/assets/c55f5b70-e82f-4ee9-8505-f86e69a880a4" />
 
-
+#
 
 # Mapping ตาราง → Bounded Context
 
@@ -116,7 +114,7 @@
 
 * `Employees`, `Roles`, `EmployeeRoles`, `Menus`, `RoleMenus`
  
----
+#
 
 # จำนวน Service ที่แนะนำ (MVP → Scale)
 
