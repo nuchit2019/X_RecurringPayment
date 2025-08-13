@@ -33,6 +33,7 @@
 ## 1) Recurring Orchestrator (Core)
 
 **หน้าที่**: ลงทะเบียนแผน recurring, create/queue payment attempt, เปลี่ยนสถานะ, เก็บประวัติ, วางแผน retry...
+
 **ตาราง**
 
 * `RecurringRequests` (แม่แบบ/แผน recurring ต่อกรมธรรม์/ผู้ชำระ)
@@ -53,6 +54,7 @@
 ## 2) Payer & Mandate (Consent / Payment Method)
 
 **หน้าที่**: จัดเก็บผู้ชำระ วิธีชำระ token/alias และการยินยอม (mandate) อย่างปลอดภัย...
+
 **ตาราง**
 
 * `Payers`
@@ -73,6 +75,7 @@
 ## 4) Policy (Insurance)
 
 **หน้าที่**: แหล่งข้อมูลกรมธรรม์/เบี้ย/งวด—ระบบ recurring เป็น downstream ใช้เพื่อคำนวณยอดหรือตรวจสิทธิ...
+
 **ตาราง**
 
 * `Policies`
@@ -80,7 +83,8 @@
 
 ## 5) Channel & Product Catalog
 
-**หน้าที่**: นิยามช่องทาง (Web, App, Counter, BPSS ฯลฯ) และสินค้าที่เปิด recurring + รูปแบบที่รองรับ
+**หน้าที่**: นิยามช่องทาง (Web, App, Counter, BPSS ฯลฯ) และสินค้าที่เปิด recurring + รูปแบบที่รองรับ...
+
 **ตาราง**
 
 * `Channels`
@@ -90,6 +94,7 @@
 ## 6) Payment Gateway Connector
 
 **หน้าที่**: ผนวกรูปแบบและภาษาของ PG ภายนอกผ่าน Anti-Corruption Layer, บันทึก log ทุกครั้ง...
+
 **ตาราง**
 
 * `PaymentGatewayTransactionLogs`
@@ -97,6 +102,7 @@
 ## 7) Notification
 
 **หน้าที่**: รับ event แล้วส่งข้อความตาม template...
+
 **ตาราง**
 
 * `MessageTemplates`
@@ -104,6 +110,7 @@
 ## 8) IAM / Admin (Generic)
 
 **หน้าที่**: จัดการพนักงาน/บทบาท/เมนู (ไม่ใช่โดเมนธุรกิจหลัก)...
+
 **ตาราง**
 
 * `Employees`, `Roles`, `EmployeeRoles`, `Menus`, `RoleMenus`
