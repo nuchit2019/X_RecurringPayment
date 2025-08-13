@@ -21,6 +21,7 @@
 ---
 
 ```mermaid
+---
 config:
   layout: elk
 ---
@@ -72,6 +73,7 @@ via ACL --> PG
     classDef core fill:#f2e8ff,stroke:#7a3db8,stroke-width:1.2px,color:#1b0b2e
     classDef support fill:#e6f7ff,stroke:#1677ff,stroke-width:1.2px
     classDef generic fill:#fafafa,stroke:#999,stroke-width:1.2px
+
 ```
 
 # Mapping ตาราง → Bounded Context
