@@ -32,7 +32,7 @@
 
 ## 1) Recurring Orchestrator (Core)
 
-**หน้าที่**: ลงทะเบียนแผน recurring, create/queue payment attempt, เปลี่ยนสถานะ, เก็บประวัติ, วางแผน retry
+**หน้าที่**: ลงทะเบียนแผน recurring, create/queue payment attempt, เปลี่ยนสถานะ, เก็บประวัติ, วางแผน retry...
 **ตาราง**
 
 * `RecurringRequests` (แม่แบบ/แผน recurring ต่อกรมธรรม์/ผู้ชำระ)
@@ -52,7 +52,7 @@
 
 ## 2) Payer & Mandate (Consent / Payment Method)
 
-**หน้าที่**: จัดเก็บผู้ชำระ วิธีชำระ token/alias และการยินยอม (mandate) อย่างปลอดภัย
+**หน้าที่**: จัดเก็บผู้ชำระ วิธีชำระ token/alias และการยินยอม (mandate) อย่างปลอดภัย...
 **ตาราง**
 
 * `Payers`
@@ -60,12 +60,11 @@
 * `Consents`
 * `PaymentMethodConsents`
 * `TitleNames` *(อ้างอิงชื่อคำนำหน้า)*
-
-**หมายเหตุ**: ต้องหลีกเลี่ยงการเก็บข้อมูลบัตรดิบ ใช้ token/alias จาก PG/Token Vault แทน
+ 
 
 ## 3) Billing / Invoicing
 
-**หน้าที่**: สร้างใบแจ้งหนี้/ยอดที่จะเรียกเก็บ, ออกเลขอ้างอิง, เชื่อมโยง policy
+**หน้าที่**: สร้างใบแจ้งหนี้/ยอดที่จะเรียกเก็บ, ออกเลขอ้างอิง, เชื่อมโยง policy...
 **ตาราง**
 
 * `Invoices`
@@ -73,7 +72,7 @@
 
 ## 4) Policy (Insurance)
 
-**หน้าที่**: แหล่งข้อมูลกรมธรรม์/เบี้ย/งวด—ระบบ recurring เป็น downstream ใช้เพื่อคำนวณยอดหรือตรวจสิทธิ
+**หน้าที่**: แหล่งข้อมูลกรมธรรม์/เบี้ย/งวด—ระบบ recurring เป็น downstream ใช้เพื่อคำนวณยอดหรือตรวจสิทธิ...
 **ตาราง**
 
 * `Policies`
@@ -90,40 +89,28 @@
 
 ## 6) Payment Gateway Connector
 
-**หน้าที่**: ผนวกรูปแบบและภาษาของ PG ภายนอกผ่าน Anti-Corruption Layer, บันทึก log ทุกครั้ง
+**หน้าที่**: ผนวกรูปแบบและภาษาของ PG ภายนอกผ่าน Anti-Corruption Layer, บันทึก log ทุกครั้ง...
 **ตาราง**
 
 * `PaymentGatewayTransactionLogs`
 
 ## 7) Notification
 
-**หน้าที่**: รับ event แล้วส่งข้อความตาม template
+**หน้าที่**: รับ event แล้วส่งข้อความตาม template...
 **ตาราง**
 
 * `MessageTemplates`
 
 ## 8) IAM / Admin (Generic)
 
-**หน้าที่**: จัดการพนักงาน/บทบาท/เมนู (ไม่ใช่โดเมนธุรกิจหลัก)
+**หน้าที่**: จัดการพนักงาน/บทบาท/เมนู (ไม่ใช่โดเมนธุรกิจหลัก)...
 **ตาราง**
 
 * `Employees`, `Roles`, `EmployeeRoles`, `Menus`, `RoleMenus`
-
+ 
 ---
 
-# ความสัมพันธ์ระหว่าง Contexts (Up/Downstream)
-
-* **Policy → Recurring Orchestrator**: *Upstream Supplier*. Recurring อ่านข้อมูลกรมธรรม์/งวด/ยอด (แนะนำใช้ **Published Language** + อาจมี **ACL** แปลงคำ)
-* **Payer & Mandate → Recurring Orchestrator**: *Upstream Supplier*. ให้สิทธิ์ตัดและข้อมูลวิธีชำระ (token/consent)
-* **Channel & Product → Recurring Orchestrator**: กำหนดว่า policy/product นี้ตัดผ่านช่องทาง/ประเภทใดได้
-* **Recurring Orchestrator → Billing**: สั่งสร้างใบแจ้งหนี้ตามรอบ
-* **Recurring Orchestrator → Payment Gateway Connector**: ขอตัดยอดจริง (Connector ทำงานกับ PG ภายนอกและส่งผลกลับ)
-* **Recurring Orchestrator → Notification**: โยนอีเวนต์ให้ส่งแจ้งเตือน
-* **IAM** ให้สิทธิ์การใช้งานกับแอปของทุก context (generic)
-
----
-
-# ขนาดบริการที่แนะนำ (MVP → Scale)
+# จำนวน Service ที่แนะนำ (MVP → Scale)
 
 เริ่มต้นให้ “แยกตามขอบเขตข้อมูลและการเปลี่ยนแปลง” ก่อน แล้วค่อยแยกฐานข้อมูลจริงเมื่อเสถียร
 
