@@ -128,3 +128,5 @@
 3. `billing-invoice-service` (Supporting)
 4. `pg-connector-service` (Supporting, ACL)
 5. `notification-service` (Generic; จะรวมกับระบบแจ้งเตือนเดิมก็ได้)
+
+> หมายเหตุ PG: Payment Gateway, ACL: Anti-Corruption Layer
