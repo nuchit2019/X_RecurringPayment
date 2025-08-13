@@ -2,17 +2,17 @@
 
 # ภาพรวม Context Map (ระดับโดเมน)
 
-* **Core Domain**
+1. **Core Domain**
 
   1. **Recurring Orchestrator** – หัวใจของระบบ recurring: สร้าง/จัดคิวรอบตัดบัตร, สร้างรายการตัดเงิน, ติดตามสถานะ, วางแผน retry
-* **Supporting Domains**
+2. **Supporting Domains**
   2\) **Payer & Mandate (Consent/Payment Method)** – เก็บผู้ชำระ/วิธีชำระ/การยินยอม (mandate)
   3\) **Billing / Invoicing** – ออกใบแจ้งหนี้/อ้างอิงยอดที่จะเรียกเก็บ
   4\) **Policy** (จากธุรกิจประกัน) – แหล่งความจริงของข้อมูลกรมธรรม์/เบี้ย/งวดชำระ
   5\) **Channel & Product Catalog** – ตั้งค่าช่องทางและสินค้าที่เปิดให้ recurring ได้/รูปแบบที่รองรับ
   6\) **Payment Gateway Connector** – ครอบ (Adapter/ACL) สำหรับเรียกเก็บจริงกับ PG และเก็บ transaction log
   7\) **Notification** – ส่งข้อความตาม template (SMS/LINE/Email) ตามเหตุการณ์
-* **Generic Subdomains**
+3. **Generic Subdomains**
   8\) **IAM/Admin** – สิทธิ์เมนู บทบาท พนักงาน
   9\) **Reference/Utility** – RunningNumbers, TitleNames (อ้างอิงทั่วไป)
 
